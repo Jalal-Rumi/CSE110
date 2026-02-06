@@ -1,0 +1,731 @@
+// 1.
+import java.util.Scanner ;
+public class task_1
+{
+    public static void main (String [] args)
+    {
+    Scanner ade = new Scanner (System.in) ;
+
+    System.out.print("Enter a number to check if it's even or odd type: ") ;
+    int even_odd_checker = ade.nextInt() ;
+    evenChecker(even_odd_checker) ;
+
+    System.out.print("Enter a number to check if it's a even number: ") ;
+    int even_checker = ade.nextInt() ;
+    boolean even_checker_result = isEven(even_checker) ;
+    System.out.println(even_checker_result) ;
+
+    System.out.print("Enter a number to check if it's a positive number: " ) ;
+    int positive_checker = ade.nextInt() ;
+    boolean positive_checker_result = isPos(positive_checker) ;
+    System.out.println(positive_checker_result) ;
+
+    System.out.print("Enter a number to generate a sequence: ") ;
+    int sequence_checker = ade.nextInt() ;
+    sequence(sequence_checker) ;
+    }
+
+    public static void evenChecker (int even_odd_checker)
+    {
+        if (even_odd_checker % 2 == 0)
+        {
+        System.out.println("Even!! ") ;
+        }
+
+        else
+        {
+        System.out.println("Odd!! ") ;
+        }
+    }
+
+    public static boolean isEven (int even_checker)
+    {
+        if (even_checker % 2 == 0)
+        {
+        return true ;
+        }
+
+        else
+        {
+        return false ;
+        }
+    }
+
+    public static boolean isPos (int positive_checker)
+    {
+        if (positive_checker > 0)
+        {
+        return true ;
+        }
+
+        else
+        {
+        return false ;
+        }
+    }
+
+    public static void sequence (int n)
+    {
+        if (isPos(n) == true)
+        {
+            for (int digit_counter = 0; digit_counter <= n; digit_counter++)
+            {
+                if (isEven(digit_counter) == true)
+                {
+                System.out.print(digit_counter + " ") ;
+                }
+            }
+        }
+
+        else
+        {
+            for (int digit_counter = n; digit_counter <= - 1; digit_counter++)
+            {
+                if (isEven(digit_counter) == false)
+                {
+                System.out.print(digit_counter + " ") ;
+                }
+            }
+        }
+    }
+}
+
+
+// 2.
+import java.util.Scanner ;
+public class task_2
+{
+    public static void main (String [] args)
+    {
+    Scanner ade = new Scanner (System.in) ;
+
+    System.out.print("Enter the radius for circle area calculation: ") ;
+    int radius_of_circle = ade.nextInt() ;
+    double area_of_circle = circleArea(radius_of_circle) ;
+    System.out.printf("Area of circle: %.4f ", area_of_circle) ;
+    System.out.println() ;
+
+    System.out.print("Enter the radius for sphere volume calculation: ") ;
+    int radius_of_sphere = ade.nextInt() ;
+    double volume_of_sphere = sphereVolume(radius_of_sphere) ;
+    System.out.printf("Volume of sphere: %.4f ", volume_of_sphere) ;
+    System.out.println() ;
+
+    System.out.print("Enter the diameter: ") ;
+    int diameter = ade.nextInt() ;
+
+    System.out.print("Enter the type: ") ;
+    String type_checker = ade.next() ;
+    findSpace(diameter, type_checker) ;
+    }
+
+    public static double circleArea (int radius_of_circle)
+    {
+        if (radius_of_circle > 0)
+        {
+        return Math.PI * radius_of_circle * radius_of_circle ;
+        }
+        else
+        {
+        return 0 ;
+        }
+    }
+
+    public static double sphereVolume (int radius_of_sphere)
+    {
+        if (radius_of_sphere > 0)
+        {
+        return (4.0 / 3.0) * Math.PI * Math.pow (radius_of_sphere, 3) ;
+        }
+        else
+        {
+        return 0 ;
+        }
+    }
+
+    public static void findSpace (int diameter, String type_checker)
+    {
+        int radius = diameter / 2 ;
+
+        if (type_checker.equalsIgnoreCase("circle"))
+        {
+        double area = circleArea(radius) ;
+        System.out.printf("Area = %.4f ", area) ;
+        }
+
+        else if (type_checker.equalsIgnoreCase("sphere"))
+        {
+        double volume = sphereVolume(radius) ;
+        System.out.printf("Volume = %.4f ", volume) ;
+        }
+
+        else
+        {
+        System.out.println("Wrong Parameter ") ;
+        }
+    }
+}
+
+
+// 3.
+import java.util.Scanner ;
+public class task_3
+{
+    public static void main (String [] args)
+    {
+    Scanner ade = new Scanner (System.in) ;
+
+    System.out.println("Enter 3 sides of a triangle: ") ;
+    int side_1 = ade.nextInt() ;
+    int side_2 = ade.nextInt() ;
+    int side_3 = ade.nextInt() ;
+    boolean isTriangle_result = isTriangle(side_1, side_2, side_3) ;
+    System.out.println(isTriangle_result) ;
+
+    triArea(side_1, side_2, side_3) ;
+    }
+
+    public static boolean isTriangle (int side1, int side2, int side3)
+    {
+        if ((side1 + side2 > side3) && (side2 + side3 > side1) && (side1 + side3 > side2))
+        {
+        return true ;
+        }
+        else
+        {
+        return false ;
+        }
+    }
+
+    public static void triArea (int side1, int side2, int side3)
+    {
+        if (isTriangle(side1, side2, side3) == true)
+        {
+        double semi_perimeter = (side1 + side2 + side3) / 2.0;
+        double area_of_triangle = Math.sqrt (semi_perimeter * (semi_perimeter - side1) * (semi_perimeter - side2) * (semi_perimeter - side3)) ;
+        System.out.printf("%.3f", area_of_triangle) ;
+        }
+        else
+        {
+        System.out.println("Can't form triangle ") ;
+        }
+    }
+}
+
+
+// 4.
+import java.util.Scanner ;
+public class task_4
+{
+    public static void main (String [] args)
+    {
+    Scanner ade = new Scanner (System.in) ;
+
+    System.out.print("Enter a number to check if it's a prime number: ") ;
+    int prime_checker = ade.nextInt() ;
+    System.out.println(isPrime(prime_checker)) ;
+
+    System.out.print("Enter a number to check if it's a perfect number: ") ;
+    int perfect_checker = ade.nextInt() ;
+    System.out.println(isPerfect(perfect_checker)) ;
+
+    System.out.print("Enter a number to calculate the sum of all numbers that are either prime numbers or perfect: ") ;
+    int sum_tester = ade.nextInt() ;
+    System.out.println(special_sum(sum_tester)) ;
+    }
+
+    public static boolean isPrime (int prime_checker)
+    {
+        if (prime_checker <= 1)
+        {
+        return false ;
+        }
+
+        for (int digit_counter = 2; digit_counter <= prime_checker - 1; digit_counter++)
+        {
+
+            if (prime_checker % digit_counter == 0)
+            {
+            return false ;
+            }
+        }
+    return true ;
+    }
+
+    public static boolean isPerfect (int perfect_checker)
+    {
+        int sum_of_perfect_checker = 0 ;
+        for (int digit_counter = 1; digit_counter < perfect_checker; digit_counter++)
+        {
+            if (perfect_checker % digit_counter == 0)
+            {
+            sum_of_perfect_checker += digit_counter ;
+            }
+        }
+
+        if (sum_of_perfect_checker == perfect_checker)
+        {
+        return true ;
+        }
+
+        else
+        {
+        return false ;
+        }
+    }
+
+    public static int special_sum (int sum_tester)
+    {
+        int sum_of_digits = 0 ;
+        for (int digit_counter = 1; digit_counter <= sum_tester; digit_counter++)
+        {
+            if (isPrime(digit_counter) || isPerfect(digit_counter))
+            {
+            sum_of_digits += digit_counter ;
+            }
+        }
+        return sum_of_digits ;
+    }
+}
+
+
+// 5.
+import java.util.Scanner ;
+public class task_5
+{
+    public static void main (String [] args)
+    {
+    Scanner ade = new Scanner (System.in) ;
+
+    System.out.print("Enter number of dots: ") ;
+    int number_of_dots = ade.nextInt() ;
+    showDots(number_of_dots) ;
+    System.out.println() ;
+
+    System.out.print("Enter a number to get palindromic pattern: ") ;
+    int palindromic_pattern_tester = ade.nextInt() ;
+    show_palindrome(palindromic_pattern_tester) ;
+    System.out.println() ;
+
+    System.out.print("Enter a number to get palindromic diamond shape: ") ;
+    int palindromic_diamond_height = ade.nextInt() ;
+    showDiamond(palindromic_diamond_height) ;
+    System.out.println() ;
+    }
+
+    public static void showDots (int number_of_dots)
+    {
+        for (int dot_counter = 1; dot_counter <= number_of_dots; dot_counter++)
+        {
+        System.out.print(".") ;
+        }
+    }
+
+    public static void show_palindrome (int palindromic_pattern_tester)
+    {
+
+        for (int digit_counter = 1; digit_counter <= palindromic_pattern_tester; digit_counter++)
+        {
+        System.out.print(digit_counter) ;
+        }
+
+        for (int digit_counter = palindromic_pattern_tester - 1; digit_counter >= 1; digit_counter--)
+        {
+        System.out.print(digit_counter) ;
+        }
+    }
+
+    public static void showDiamond (int palindromic_diamond_height)
+    {
+
+        for (int counter = 1; counter <= palindromic_diamond_height; counter++)
+        {
+        showDots(palindromic_diamond_height - counter) ;
+        show_palindrome(counter) ;
+        showDots(palindromic_diamond_height - counter) ;
+        System.out.println() ;
+        }
+
+        for (int counter = palindromic_diamond_height - 1; counter >= 1; counter--)
+        {
+        showDots(palindromic_diamond_height - counter) ;
+        show_palindrome(counter) ;
+        showDots(palindromic_diamond_height - counter) ;
+        System.out.println() ;
+        }
+    }
+}
+
+
+// 6.
+import java.util.Scanner ;
+public class task_6
+{
+    public static void main (String [] args)
+    {
+    Scanner ade = new Scanner (System.in) ;
+
+    System.out.print("Enter your age: ") ;
+    int age_tester = ade.nextInt() ;
+    System.out.println() ;
+
+    System.out.print("Enter your salary: ") ;
+    double salary_tester = ade.nextDouble() ;
+    System.out.printf("%.1f", calcTax(age_tester, salary_tester)) ;
+    System.out.println() ;
+
+    calcYearlyTax() ;
+    }
+
+    public static double calcTax (int age_tester, double salary_tester)
+    {
+
+        if (age_tester >= 18 && salary_tester >= 10000 && salary_tester <= 20000)
+        {
+        return salary_tester * 0.07 ;
+        }
+
+        if (age_tester >= 18 && salary_tester > 20000)
+        {
+        return salary_tester * 0.14 ;
+        }
+
+        else
+        {
+        return 0.0 ;
+        }
+    }
+
+    public static void calcYearlyTax()
+    {
+        Scanner ade = new Scanner (System.in) ;
+
+        System.out.print("Enter your age: ") ;
+        int age_tester = ade.nextInt() ;
+        System.out.println() ;
+
+        double total_tax = 0.0 ;
+
+        for (int month_counter = 1; month_counter  <= 12; month_counter ++)
+        {
+            System.out.print("Enter your income for month " + month_counter  + ": ") ;
+            double monthly_income = ade.nextDouble() ;
+
+            double monthly_tax = calcTax(age_tester, monthly_income) ;
+            System.out.printf("Month" + month_counter + " tax: " + "%.1f", monthly_tax) ;
+            System.out.println() ;
+
+            total_tax += monthly_tax ;
+        }
+        System.out.printf("Total Yearly Tax: %.1f ", total_tax) ;
+    }
+}
+
+
+// 7.
+import java.util.Scanner ;
+public class task_7
+{
+    public static void main (String [] args)
+    {
+    Scanner ade = new Scanner (System.in) ;
+
+    System.out.print("Enter lowest limit for ascending order: ") ;
+    int lowest_limit_1 = ade.nextInt() ;
+    System.out.print("Enter highest limit for ascending order: ") ;
+    int highest_limit_1 = ade.nextInt() ;
+    oneToN(lowest_limit_1, highest_limit_1) ;
+    System.out.println() ;
+
+    System.out.print("Enter lowest limit for descending order: ") ;
+    int lowest_limit_2 = ade.nextInt() ;
+    System.out.print("Enter highest limit for descending order: ") ;
+    int highest_limit_2 = ade.nextInt() ;
+    nToOne(lowest_limit_2, highest_limit_2) ;
+    System.out.println() ;
+
+    System.out.print("Enter lowest limit to add numbers in ascending order: ") ;
+    int lowest_limit_3 = ade.nextInt() ;
+    System.out.print("Enter highest limit to add numbers in ascending order: ") ;
+    int highest_limit_3 = ade.nextInt() ;
+    System.out.println(recursiveSum(lowest_limit_3, highest_limit_3)) ;
+    }
+
+    public static void oneToN (int lowest_limit_1, int highest_limit_1)
+    {
+        if (lowest_limit_1 > highest_limit_1)
+        {
+        return ;
+        }
+
+        else
+        {
+        System.out.print(lowest_limit_1 + " ") ;
+        oneToN(lowest_limit_1 + 1, highest_limit_1) ;
+        }
+    }
+
+    public static void nToOne (int lowest_limit_2, int highest_limit_2)
+    {
+        if (highest_limit_2 < lowest_limit_2)
+        {
+        return ;
+        }
+
+        else
+        {
+        System.out.print(highest_limit_2 + " ") ;
+        nToOne(lowest_limit_2, highest_limit_2 - 1) ;
+        }
+    }
+
+    public static int recursiveSum (int lowest_limit_3, int highest_limit_3)
+    {
+        if (lowest_limit_3 > highest_limit_3)
+        {
+        return 0 ;
+        }
+
+        else
+        {
+        return lowest_limit_3 + recursiveSum(lowest_limit_3 + 1, highest_limit_3) ;
+        }
+    }
+}
+
+
+// 8.
+import java.util.Scanner ;
+public class task_8
+{
+    public static void main (String [] args)
+    {
+    Scanner ade = new Scanner (System.in) ;
+
+    System.out.print("Enter testing value: ") ;
+    int testing_value = ade.nextInt() ;
+    reverseDigits(testing_value) ;
+    }
+
+    public static void reverseDigits (int testing_value)
+    {
+
+        if (testing_value == 0)
+        {
+        return ;
+        }
+
+        else
+        {
+        System.out.println(testing_value % 10) ;
+        reverseDigits(testing_value / 10) ;
+        }
+    }
+}
+
+
+// 9.
+import java.util.Scanner ;
+public class task_9
+{
+    public static void main (String [] args)
+    {
+    Scanner ade = new Scanner (System.in) ;
+
+    System.out.print("Enter testing value: ") ;
+    int testing_value = ade.nextInt() ;
+    System.out.println(sumDigits(testing_value)) ;
+    }
+
+    public static int sumDigits (int testing_value)
+    {
+
+        if (testing_value == 0)
+        {
+        return 0 ;
+        }
+
+        else
+        {
+        return testing_value % 10 + sumDigits(testing_value / 10) ;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
