@@ -1,0 +1,403 @@
+// 1.
+public class task_1
+{
+public static void main (String [] args)
+    {
+    int i = 18 ;
+    while (i <= 63)
+    {
+        System.out.print(i + " ") ;
+        i = i + 9 ;
+    }
+    }
+}
+
+// 2.
+public class task_2
+{
+public static void main (String [] args)
+    {
+    int i = 18 ;
+    while (i <= 63)
+    {
+        if (i % 2 == 1)
+        {
+        System.out.print(-i + "  ") ;
+        }
+        else
+        {
+        System.out.print(i + "  ") ;
+        }
+        i = i + 9 ;
+    }
+    }
+}
+
+// 3.
+public class task_3
+{
+public static void main (String [] args)
+    {
+    double i = 0 ;
+    double sum = 0 ;
+    while (i <= 600)
+    {
+        if (i % 9 == 0 && i % 7 == 0)
+        {
+        sum = sum + i ;
+        }
+        i = i + 1 ;
+        
+    }
+    System.out.println(sum);
+    }
+}
+
+// 4.
+public class task_4
+{
+public static void main (String [] args)
+    {
+    double i = 0 ;
+    double sum = 0 ;
+    while (i <= 600)
+    {
+        if (i % 9 == 0 || i % 7 == 0)
+        {
+        sum = sum + i ;
+        }
+        i = i + 1 ;
+        
+    }
+    System.out.println(sum);
+    }
+} 
+
+// 5.
+public class task_5
+{
+public static void main (String [] args)
+    {
+    double i = 0 ;
+    double sum = 0 ;
+    while (i <= 600)
+    {
+        if ((i % 9 == 0 || i % 7 == 0) && (i % 63 != 0))
+        {
+        sum = sum + i ;
+        }
+        i = i + 1 ;
+        
+    }
+    System.out.println(sum);
+    }
+}
+
+// 6.
+public class task_6
+{
+public static void main (String [] args)
+{
+        double n = 20 ;
+        double sum = 0 ;
+        double i = 1 ;
+        while (i <= n)
+        {
+        if (i % 2 == 0)
+        {
+        sum = sum - (int)Math.pow(i,2) ;
+        }
+        else
+        {
+        sum = sum + (int)Math.pow(i,2) ;
+        }
+        i = i + 1 ;
+        }
+        System.out.print(sum) ;
+}
+}
+
+// 7.
+public class task_7
+{
+public static void main (String [] args)
+{
+        int num_1 = 120 ;
+        int divisor = 1 ;
+        System.out.println("divisors of " + num_1 + " : ") ;
+        while (divisor <= num_1)
+        {
+        if (num_1 % divisor == 0)
+        {
+        System.out.println(divisor);
+        }
+        divisor += 1 ;
+        }
+}
+}
+
+// 8.
+public class task_8
+{
+public static void main (String [] args)
+{
+        double n = 5 ;
+        double sum = 0 ;
+        double counter = 1 ;
+        double odd_number = 1 ;
+        System.out.println("The odd numbers are : ") ;
+        while (counter <= n)
+        {
+        System.out.println(odd_number);
+        sum = sum + odd_number ;
+        odd_number += 2 ;
+        counter = counter + 1 ;
+        }
+        System.out.println("The Sum of odd Natural Numbers up to 5 terms is : " + sum) ;
+}
+}
+
+// 9.
+public class task_9
+{
+public static void main (String [] args)
+{
+    int first_number = 1 ;
+    int sum = 0 ;
+    int counter = 1 ;
+    while (counter <= 10)
+    {
+    sum = sum + first_number ;
+    System.out.println("Current Number : " + first_number + ", Sum : " + sum) ;
+    first_number += 1 ;
+    counter += 1 ;
+    }
+}
+}
+
+// 10.
+public class task_10
+{
+public static void main (String [] args)
+{
+    int first_number = 0 ;
+    int n = 40 ;
+    while (first_number <= n)
+    {
+    if (first_number % 5 == 0 && first_number % 3 != 0)
+    {
+    System.out.println("Required Number : " + first_number) ;
+    }
+    first_number += 1 ;
+    }
+}
+}
+
+// 11.
+public class task_11
+{
+public static void main (String [] args)
+{
+    int given_value = 7546 ;
+    int digits_counter = 0 ;
+    while (given_value != 0)
+    {
+    given_value /= 10 ;
+    digits_counter += 1 ;
+    }
+    System.out.println("Total digits = " + digits_counter) ;
+}
+}
+
+// 12.
+public class task_12
+{
+public static void main (String [] args)
+{
+    int given_value = 32765 ;
+    int divisible = 0 ;
+    int counter = 0 ;
+    while (given_value != 0)
+    {
+    divisible = given_value % 10 ;
+    if (given_value / 10 == 0)
+    {
+    System.out.print(divisible + " ") ;
+    }
+    else
+    {
+    System.out.print(divisible + ", ") ;
+    }
+    given_value /= 10 ; // Step Box
+    counter += 1 ;
+    }
+}
+}
+
+// 13.
+public class task_13
+{
+public static void main (String [] args)
+{
+    int given_value = 32768 ;
+    int temp_given_value = given_value ;
+    int digits_counter = 0 ;
+    int individual_digit = 0 ;
+    int multiplier = 1 ;
+
+    while (temp_given_value != 0) // Number of Digits
+    {
+    temp_given_value /= 10 ;
+    digits_counter += 1 ; // Step Box
+    }
+
+    while (digits_counter != 1) // 10^4
+    {
+    multiplier = multiplier * 10 ;
+    digits_counter -= 1 ; // Step Box
+    }
+
+    while (multiplier != 0) // Individual Value
+    {
+    individual_digit = given_value / (multiplier) ; // 3
+    if (given_value / 10 == 0)
+    {
+    System.out.print(individual_digit + " ") ;
+    }
+    else
+    {
+    System.out.print(individual_digit + ", ") ;
+    }
+    given_value = given_value % multiplier ; // 2768
+    multiplier /= 10 ; // Step Box
+    }
+}
+}
+
+// 14.
+public class task_14
+{
+public static void main (String [] args)
+{
+    int n = 7 ;
+    int insider = 0 ;
+    int starting_digit = 2 ;
+    while (starting_digit < n)
+    {
+        if (n % starting_digit == 0)
+        {
+        insider = 1 ;
+        }
+        starting_digit = starting_digit + 1 ;
+    }
+    if (insider == 0)
+    {
+    System.out.print(n + " is a prime number ") ;
+    }
+    else
+    {
+    System.out.print(n + " is not a prime number ") ;
+    }
+}
+}
+
+// 15.
+public class task_15
+{
+public static void main (String [] args)
+{
+    int n = 6 ;
+    int counter = 1 ; // First Digit.....Upto 5
+    int sum = 0 ;
+    while (counter < n)
+    {
+        if (n % counter == 0)
+        {
+        sum = sum + counter ;
+        }
+    counter = counter + 1 ;
+    } // Loop Ends
+    if (sum == n)
+    {
+    System.out.print(n + " is a perfect number ") ;
+    }
+    else
+    {
+    System.out.print(n + " is not a perfect number ") ;
+    }
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
