@@ -1,0 +1,469 @@
+// 1.
+import java.util.Scanner ;
+
+public class task_1
+{
+public static void main (String [] args)
+    {
+    Scanner ade = new Scanner(System.in) ;
+    System.out.print(" Please enter a digit = ") ;
+    int sample_input_number = ade.nextInt() ; // 5
+    System.out.println(" You entered " + sample_input_number) ; // You entered 5
+    int new_input ;
+    double avg = 0 ;
+    double sum = 0 ;
+    int even_number_counter = 0 ;
+    int max_even_positive_number = 0 ;
+    int min_even_positive_number = 0 ;
+
+    for(int counter = 1; counter <= sample_input_number; counter++)
+    {
+    System.out.print(" Enter a value = ") ;
+    new_input = ade.nextInt() ;
+    System.out.println(" You entered a input : " + new_input) ; // 12, -8, 19, 8, -1
+
+        if(new_input > 0 && new_input % 2 == 0)
+        {
+        even_number_counter ++ ;
+            if(even_number_counter >= 1)
+            {
+            sum += new_input ;
+            avg = sum / even_number_counter ;
+            }
+            if(new_input >= max_even_positive_number)
+            {
+            max_even_positive_number = new_input ;
+            }
+            if(new_input < max_even_positive_number)
+            {
+            min_even_positive_number = new_input ;
+            }
+        }
+    }
+    System.out.println(" Average = " + avg + " ") ;
+    System.out.println(" Max = " + max_even_positive_number) ;
+    System.out.println(" Min = " + min_even_positive_number) ;
+    ade.close() ;
+    }
+}
+
+
+// 2.
+import java.util.Scanner ;
+
+public class task_2
+{
+public static void main (String [] args)
+    {
+    Scanner ade = new Scanner(System.in) ;
+    int sample_input_number ;
+
+    for( ; ; ) // Infinite Loop
+    {
+    System.out.print(" Enter Number = ") ;
+    sample_input_number = ade.nextInt() ;
+        if(sample_input_number < 0)
+        {
+        System.out.println(" Stop! ") ;
+        break ;
+        }
+    System.out.println(" Expected Output = " + (int)Math.pow(sample_input_number, 2)) ;
+    }
+    ade.close() ;
+    }
+}
+
+
+// 3.
+import java.util.Scanner ;
+
+public class task_3
+{
+public static void main (String [] args)
+    {
+    Scanner ade = new Scanner(System.in) ;
+    System.out.print(" Please enter a digit = ") ;
+    int sample_input_number = ade.nextInt() ; // 5
+    System.out.println(" You entered " + sample_input_number) ;
+    int value ;
+    int non_negative_counter = 0 ;
+    int negative_counter = 0 ;
+
+    for(int counter = 1; counter <= sample_input_number; counter++) // 1 ^^ 5
+    {
+    System.out.print(" Enter Number " + counter + " = ") ;
+    value = ade.nextInt() ;
+        if(value >= 0)
+        {
+        non_negative_counter ++ ;
+        }
+        if(value < 0)
+        {
+        negative_counter ++ ;
+        }
+    }
+    System.out.println(non_negative_counter + " Non-negative Numbers ") ;
+    System.out.println(negative_counter + " Negative Numbers ") ;
+    ade.close() ;
+    }
+}
+
+
+// 4.
+import java.util.Scanner ;
+
+public class task_4
+{
+public static void main (String [] args)
+    {
+    Scanner ade = new Scanner(System.in) ;
+    System.out.print(" Please enter a digit = ") ;
+    int n = ade.nextInt() ; // number_of_digits_for_calculation = 5
+
+        int counter = 1 ;
+        int starting_digit = 2 ;
+        int flag = 0 ;
+
+        if(n > 0)
+        {
+            while(counter <= n)
+            {
+    
+                for(int starting_divisor = 2; starting_divisor < starting_digit; starting_divisor ++)
+                {
+                    if(starting_digit % starting_divisor == 0)
+                    {
+                    flag = 1 ;
+                    }
+                }
+            if(flag == 0)
+            {
+            System.out.println(starting_digit + " which is a prime number ") ;
+            counter ++ ;
+            }
+            starting_digit ++ ;
+            flag = 0 ; // Resetting flag for each number
+            }
+        }
+
+        else
+        {
+            System.out.println(" Invalid ") ;
+        }
+    ade.close() ;
+    }
+}
+
+
+// 5.
+import java.util.Scanner ;
+
+public class task_5
+{
+public static void main (String [] args)
+    {
+    Scanner ade = new Scanner(System.in) ;
+    System.out.print(" The value of N = ") ;
+    int n = ade.nextInt() ; // How many times the loop will run
+    int individual_part_sum = 0 ;
+    int total_sum = 0 ;
+
+        for(int loop_counter = 1; loop_counter <= n; loop_counter ++)
+        {
+
+            for(int part_counter = 1; part_counter <= loop_counter; part_counter ++)
+            {
+            individual_part_sum = individual_part_sum + part_counter ;
+            }
+        total_sum = total_sum - individual_part_sum ; // 0 - (0 + 1) - (1 + 2)
+        individual_part_sum = 0 ; // resetting it for each part as each part starts with 1
+        }
+    System.out.println("The value of y = " + total_sum) ;
+    ade.close() ;
+    }
+}
+
+
+// 6.
+import java.util.Scanner ;
+
+public class task_6
+{
+public static void main (String [] args)
+    {
+    Scanner ade = new Scanner(System.in) ;
+    int n ; // Number
+    int individual_part_sum = 0 ;
+    int total_sum = 0 ;
+    int divisor_counter = 0 ;
+
+    for( ; ; )
+    {
+    System.out.print(" Enter Number = ") ;
+    divisor_counter = 0 ; // resetting for each value
+    n = ade.nextInt() ;
+
+        if(n > 0 && n % 2 == 0)
+        {
+
+            int divisor_checker = 1 ;
+            while(divisor_checker <= n)
+            {
+                if(n % divisor_checker == 0)
+                {
+                divisor_counter ++ ;
+                }
+            divisor_checker ++ ;
+            }
+        System.out.println(n + " has " + divisor_counter + " divisors ") ;
+        }
+        else
+        {
+        System.out.println(" Invalid ") ;
+        }
+    }
+    }
+}
+
+
+// 7.
+import java.util.Scanner ;
+
+public class task_7
+{
+public static void main (String [] args)
+    {
+    Scanner ade = new Scanner(System.in) ;
+    System.out.print(" Enter Test Case Numbers = ") ;
+    int n = ade.nextInt() ; // Test Case Numbers
+    int sum_of_odd_numbers = 0 ;
+    int digit_counter = 1 ;
+
+
+    for(int counter = 1; counter <= n; counter ++)
+    {
+    sum_of_odd_numbers = 0 ; // resetting for next case
+    digit_counter = 1 ; // resetting for next case
+
+    // Creating (X, Y) pair for next case
+    System.out.println(" Enter X = ") ;
+    int first_digit = ade.nextInt() ; // X
+    System.out.println(" Enter Y = ") ;
+    int second_digit = ade.nextInt() ; // Y
+
+
+        while(digit_counter <= second_digit)
+        {
+
+            if(first_digit % 2 != 0)
+            {
+            sum_of_odd_numbers = sum_of_odd_numbers + first_digit ;
+            digit_counter ++ ;
+            }
+        first_digit ++ ;
+        }
+    System.out.println(" Sum = " + sum_of_odd_numbers) ;
+    }
+    System.out.println(" Case Check Done ") ;
+    }
+}
+
+
+// 8.
+import java.util.Scanner ;
+
+public class task_8
+{
+public static void main (String [] args)
+    {
+    Scanner ade = new Scanner(System.in) ;
+    System.out.print(" Total Floors = ") ;
+    int floors = ade.nextInt() ;
+    System.out.println(" Total Rooms = ") ;
+    int rooms = ade.nextInt() ;
+
+    for(int floors_counter = 1; floors_counter <= floors; floors_counter ++)
+    {
+
+        for(int rooms_counter = 1; rooms_counter <= rooms; rooms_counter ++)
+        {
+        System.out.print(rooms_counter + " ") ;
+
+            if(rooms_counter == rooms)
+            {
+            System.out.println() ;
+            }
+        }
+    }
+    }
+}
+
+
+// 9.
+import java.util.Scanner ;
+
+public class task_9
+{
+public static void main (String [] args)
+    {
+    Scanner ade = new Scanner(System.in) ;
+    System.out.print(" Total Floors = ") ;
+    int floors = ade.nextInt() ;
+
+    for(int floors_counter = 1; floors_counter <= floors; floors_counter ++)
+    {
+
+        for(int space_counter = floors - floors_counter; space_counter > 0; space_counter --) // 3, 2, 1
+        {
+        System.out.print("  ") ;
+        }
+
+        for(int rooms_counter = 1; rooms_counter <= floors_counter; rooms_counter ++)
+        {
+        System.out.print(rooms_counter + " ") ;
+            if(rooms_counter == floors_counter)
+            {
+            System.out.println() ;
+            }
+        }
+    }
+    }
+}
+
+
+// 10.
+import java.util.Scanner ;
+
+public class task_10
+{
+public static void main (String [] args)
+    {
+    Scanner ade = new Scanner(System.in) ;
+    System.out.print(" Total Floors = ") ;
+    int floors = ade.nextInt() ;
+
+    for(int floors_counter = 1; floors_counter <= floors; floors_counter ++)
+    {
+
+        for(int space_counter = floors - floors_counter; space_counter > 0; space_counter --) // 3, 2, 1
+        {
+        System.out.print("  ") ;
+        }
+
+        for(int rooms_counter = 1; rooms_counter <= (2 * floors_counter - 1); rooms_counter ++)
+        {
+        System.out.print(rooms_counter + " ") ;
+        }
+    System.out.println() ; // Cursor Next Line
+    }
+    ade.close() ;
+    }
+}
+
+
+// 11.
+import java.util.Scanner ;
+
+public class task_11
+{
+public static void main (String [] args)
+    {
+    Scanner ade = new Scanner(System.in) ;
+    System.out.print(" Starting Value = ") ;
+    int start = ade.nextInt() ;
+    System.out.print(" Ending Value = ") ;
+    int end = ade.nextInt() ;
+    int sum = 0 ;
+    System.out.println(" Armstrong Numbers : ") ;
+
+    for(int tempo = start; tempo <= end; tempo ++) // 371
+    {
+
+        for(int calculator = tempo; calculator > 0;  )
+        {
+        int each_digit_reverse = calculator % 10 ; // 1, 7, 3
+        sum = sum + (each_digit_reverse * each_digit_reverse * each_digit_reverse) ;
+        calculator = calculator / 10 ; // 371, 37, 3
+        }
+
+    if (tempo == sum)
+    {
+    System.out.println(tempo) ;
+    }
+    sum = 0 ; // Resetting for next number
+    }
+    ade.close() ;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
