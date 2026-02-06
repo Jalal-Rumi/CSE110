@@ -1,0 +1,440 @@
+// 10.(a)
+public class LabFile_10_a {
+    public static void main (String [] args)
+    {
+        int hungry = 5; // code running successfully
+        System.out.println(hungry);
+    }
+
+    
+}
+
+// 10.(b)
+public class LabFile_10_b {
+    public static void main (String [] args)
+    {
+        int 2AB = 5; // error
+        System.out.println(2AB);
+    }
+
+    
+}
+
+// 10.(c)
+public class LabFile_10_c {
+    public static void main (String [] args)
+    {
+        int 312.2 = 5; // error
+        System.out.println(312.2);
+    }
+
+    
+}
+
+// 10.(d)
+public class LabFile_10_d {
+    public static void main (String [] args)
+    {
+        int MOBILE = 5; // code running successfully
+        System.out.println(MOBILE);
+    }
+
+    
+}
+
+// 10.(e)
+public class LabFile_10_e {
+    public static void main (String [] args)
+    {
+        int "Ans" = 5; // error
+        System.out.println("Ans");
+    }
+
+    
+}
+
+// 10.(f)
+public class LabFile_10_f {
+    public static void main (String [] args)
+    {
+        int $30 = 5; // code running successfully
+        System.out.println($30);
+    }
+
+    
+}
+
+// 10.(g)_No
+public class LabFile_10_g_No {
+    public static void main (String [] args)
+    {
+        int No = 5; // code running successfully
+        System.out.println(No);
+    }
+
+    
+}
+
+// 10.(g)_Yes
+public class LabFile_10_g_Yes {
+    public static void main (String [] args)
+    {
+        int Yes = 5; // code running successfully
+        System.out.println(Yes);
+    }
+
+    
+}
+
+// 10.(h)
+public class LabFile_10_h {
+    public static void main (String [] args)
+    {
+        int student-id = 5; // error
+        System.out.println(student-id);
+    }
+
+    
+}
+
+// 10.(i)
+public class LabFile_10_i {
+    public static void main (String [] args)
+    {
+        int A+3 = 5; // error
+        System.out.println(A+3);
+    }
+
+    
+}
+
+// 10.(j)
+public class LabFile_10_j {
+    public static void main (String [] args)
+    {
+        int return = 5; // code running successfully
+        System.out.println(return);
+    }
+
+    
+}
+
+// 11_2_1
+public class LabFile_11_2_1 {
+    public static void main (String [] args)
+    {
+        int num1 = 10;
+        System.out.println(num1);
+    }
+
+    
+}
+
+// 11_2_2
+public class LabFile_11_2_2 {
+    public static void main (String [] args)
+    {
+        int num1 = 10;
+        int num2 = 20;
+        int sum = num1 + num2;
+        System.out.println(sum);
+    }
+
+    
+}
+
+// 11_2_3
+public class LabFile_11_2_3 {
+    public static void main (String [] args)
+    {
+        int num1 = 6;
+        int num2 = 3;
+        int multiplication = num1 * num2;
+        int division = num1 / num2;
+        System.out.println(multiplication);
+        System.out.println(division);
+    }
+
+    
+}
+
+// 11_2_4
+public class LabFile_11_2_4 {
+    public static void main (String [] args)
+    {
+        double num1 = 6.24;
+        double num2 = 3.24;
+        double sum = num1 + num2;
+        double multiplication = num1 * num2;
+        double division = num1 / num2;
+        System.out.println(sum);
+        System.out.println(multiplication);
+        System.out.println(division);
+    }
+
+    
+}
+
+// 11_2_5
+public class LabFile_11_2_5 {
+    public static void main (String [] args)
+    {
+        double num1 = 6.24;
+        int num2 = 3;
+        double sum = num1 + num2;
+        double multiplication = num1 * num2;
+        double division = num1 / num2;
+        System.out.println(sum);
+        System.out.println(multiplication);
+        System.out.println(division);
+    }
+
+    
+}
+
+// 11_2_6
+public class LabFile_11_2_6 {
+    public static void main (String [] args)
+    {
+        String num1 = "6";
+        String num2 = "3";
+        String sum = num1 + num2;
+        System.out.println(sum);
+    }
+
+    
+}
+
+// 12.
+public class LabFile_12 {
+    public static void main (String [] args)
+    {
+        double r = 4;
+        double circumference = 2 * Math.PI * r;
+        double area = Math.PI * r * r;
+        System.out.println(r);
+        System.out.println(circumference);
+        System.out.println(area);
+    }
+
+    
+}
+
+// 13.
+public class LabFile_13 {
+    public static void main (String [] args)
+    {
+        int digit1 = 1234;
+        int La_2_Digits = 1234 % 100;
+        System.out.println(La_2_Digits);
+    }
+
+    
+}
+
+// 14.
+public class LabFile_14 {
+    public static void main (String [] args)
+    {
+        // 1 inch = 0.0254 meter
+        double total_inch = 1000;
+        double each_inch = 0.0254;
+        double coverted_value = total_inch * each_inch;
+        System.out.println(coverted_value);
+    }
+
+    
+}
+
+// 15.(a)
+public class LabFile_15_a {
+    public static void main (String [] args)
+    {
+        int a = 10; // 10 assigned to a
+        int b = 15; // 15 assigned to b
+        int temp = b; // value of b assigned to temp variable
+        b = a; // value of a assigned to b
+        a = temp; // value of temp variable assigned to a
+        System.out.println(a);
+        System.out.println(b);
+    }
+
+    
+}
+
+// 15.(b)
+public class LabFile_15_b {
+    public static void main (String [] args)
+    {
+        int a = 10; // 10 assigned to a
+        int b = 15; // 15 assigned to b
+        a = a + b;
+        b = a - b;
+        a = a - b;
+        System.out.println(a);
+        System.out.println(b);
+    }
+}
+
+// 16.
+public class LabFile_16 {
+    public static void main (String [] args)
+    {
+        int minutes = 3456789;
+        int a = (60 * 24);
+        int b = minutes / a; // Total Days
+        int c = 365;
+        int days = b % c; // Only Days
+        int years = b / c; // Years
+        System.out.print(years + " years "); // here space is also considered as a character
+        System.out.print(days + " days");
+        
+    }
+}
+
+// 17.
+public class LabFile_17 {
+    public static void main (String [] args)
+    {
+        double a = 2;
+        double b = 5;
+        double c = 8;
+        double d = ((2*b) * (c-a)/3) + 7;
+        System.out.println(d);
+        
+    }
+}
+
+// 18.
+public class LabFile_18 {
+    public static void main (String [] args){
+        int student_id = 23221454 ;
+        int a = 10;
+        int b = 1000;
+        int last_digit = student_id % a; // 4
+        int division = student_id / a; // 2322145
+        int last_sec_two_digit = division % a ; // 5
+        System.out.print(last_digit);
+        System.out.print(last_sec_two_digit);
+    }
+}
+
+// 19.
+public class LabFile_19 {
+    public static void main (String [] args)
+    {
+        double a = 8;
+        double b = 3;
+        double c = 4; // Height
+        double d = 1.0/2; // double d = 1/2 performs integer division resulting in 0 because both 1 and 2 are integers.
+        double e = 6; // Six Sides
+        double hexagon_one_side = Math. sqrt(Math. pow(c, 2) + Math. pow(b, 2)); // (5)
+        double area = (( c * (d * b * c) ) + (a * hexagon_one_side));
+        double circumference = ( hexagon_one_side * e ) ;
+        System.out.println(area);
+        System.out.println(circumference);
+    }
+}
+
+// 20.
+public class LabFile_20 {
+    public static void main (String [] args)
+    {
+        double a = 4.5;
+        double b = 9.5;
+        double c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+        double SinA = a/c;
+        double CosA = b/c;
+        double SinB = b/c;
+        double CosB = a/c;
+        System.out.println(SinA);
+        System.out.println(CosA);
+        System.out.println(SinB);
+        System.out.println(CosB);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
