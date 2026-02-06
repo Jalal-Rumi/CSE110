@@ -1,0 +1,446 @@
+// 1.
+import java.util.Scanner ;
+
+public class task_1
+{
+public static void main (String [] args)
+    {
+    Scanner ade = new Scanner(System.in) ;
+    System.out.print(" Please enter a sample string input = ") ;
+    String sample_string_input = ade.nextLine() ; // I am a hungry coder! (20)
+    String uppercase_container = "" ; // Empty String
+    char uppercase_converter ;
+
+    for(int string_position = 0; string_position <= sample_string_input.length() - 1; string_position++)
+    {
+    uppercase_converter = sample_string_input.charAt(string_position) ;
+        if(uppercase_converter >= 97 && uppercase_converter <= 122)
+        {
+        uppercase_converter = (char)(uppercase_converter - 32) ;
+        }
+    uppercase_container += uppercase_converter ;
+    }
+    System.out.print(uppercase_container) ;
+    }
+}
+
+
+// 2.
+import java.util.Scanner ;
+
+public class task_2
+{
+public static void main (String [] args)
+    {
+    Scanner ade = new Scanner(System.in) ;
+    System.out.print(" Please enter a sample string input = ") ;
+    String sample_string_input = ade.nextLine() ; // I am a hungry coder! (19)
+    String string_reverser_container = "" ; // Empty String
+    char string_reverser_converter ;
+
+    for(int string_position = sample_string_input.length() - 1; string_position >= 0; string_position--)
+    {
+    string_reverser_converter = sample_string_input.charAt(string_position) ;
+    string_reverser_container += string_reverser_converter ;
+    }
+
+    if(string_reverser_container.equals(sample_string_input))
+    {
+    System.out.print(" true ") ;
+    }
+    else
+    {
+    System.out.print(" false ") ;
+    }
+    }
+}
+
+
+// 3.
+import java.util.Scanner ;
+
+public class task_3
+{
+public static void main (String [] args)
+    {
+    Scanner ade = new Scanner(System.in) ;
+    System.out.print(" Please enter a sample string input = ") ;
+    String sample_string_input = ade.nextLine() ;
+    String current_word_container = "" ;
+    char singular_character = '-' ;
+
+    for(int string_position = 0; string_position <= sample_string_input.length() - 1; string_position++)
+    {
+    char current_character_position = sample_string_input.charAt(string_position) ;
+
+        if(current_character_position == singular_character)
+        {
+        System.out.println(current_word_container) ;
+        current_word_container = "" ; // Resetting the word container for next word
+        }
+
+        else
+        {
+        current_word_container = current_word_container + current_character_position ;
+        }
+    }
+    System.out.println(current_word_container) ; // Printing the last word, as it won't be followed by a character
+    }
+}
+
+
+// 4.
+import java.util.Scanner ;
+
+public class task_4
+{
+public static void main (String [] args)
+    {
+    Scanner ade = new Scanner(System.in) ;
+    System.out.print(" Please enter a sample string input = ") ;
+    String sample_string_input = ade.nextLine() ;
+    String string_reverser_container = "" ; // Empty String
+    char string_reverser_converter ;
+
+    for(int string_position = sample_string_input.length() - 1; string_position >= 0; string_position--)
+    {
+    string_reverser_converter = sample_string_input.charAt(string_position) ;
+    string_reverser_container += string_reverser_converter ;
+    }
+    System.out.println(string_reverser_container) ;
+    }
+}
+
+
+// 5.
+import java.util.Scanner ;
+
+public class task_5
+{
+public static void main (String [] args)
+    {
+    Scanner ade = new Scanner(System.in) ;
+    System.out.print(" Please enter a sample string input = ") ;
+    String sample_string_input = ade.nextLine() ;
+    int vowel_counter = 0 ;
+    int consonant_counter = 0 ;
+
+
+    for(int string_position = 0; string_position <= sample_string_input.length() - 1; string_position++)
+    {
+    char current_character_position = sample_string_input.charAt(string_position) ;
+
+        if(current_character_position == 'a')
+        {
+        vowel_counter ++ ;
+        continue ;
+        }
+
+        if(current_character_position == 'e')
+        {
+        vowel_counter ++ ;
+        continue ;
+        }
+
+        if(current_character_position == 'i')
+        {
+        vowel_counter ++ ;
+        continue ;
+        }
+
+        if(current_character_position == 'o')
+        {
+        vowel_counter ++ ;
+        continue ;
+        }
+
+        if(current_character_position == 'u')
+        {
+        vowel_counter ++ ;
+        continue ;
+        }
+
+        if(current_character_position == 'A')
+        {
+        vowel_counter ++ ;
+        continue ;
+        }
+
+        if(current_character_position == 'E')
+        {
+        vowel_counter ++ ;
+        continue ;
+        }
+
+        if(current_character_position == 'I')
+        {
+        vowel_counter ++ ;
+        continue ;
+        }
+
+        if(current_character_position == 'O')
+        {
+        vowel_counter ++ ;
+        continue ;
+        }
+
+        if(current_character_position == 'U')
+        {
+        vowel_counter ++ ;
+        continue ;
+        }
+
+        else if(('a' <= current_character_position && current_character_position <= 'z') || ('A' <= current_character_position && current_character_position <= 'Z'))
+        {
+        consonant_counter ++ ;
+        }
+    }
+
+    if((vowel_counter > 0 && vowel_counter % 3 == 0) && (consonant_counter > 0 && consonant_counter % 5 == 0))
+    {
+    System.out.println("Aaarr! Me Plunder!!") ;
+    }
+
+    else
+    {
+    System.out.println("Blimey! No Plunder!!") ;
+    }
+    }
+}
+
+
+// 6.
+import java.util.Scanner ;
+
+public class task_6
+{
+public static void main (String [] args)
+    {
+    Scanner ade = new Scanner(System.in) ;
+    System.out.print(" Please enter a sample string input = ") ; // CSE110 is easy
+    String sample_string_input = ade.nextLine() ;
+    String current_word_container = "" ; // For building last word first
+
+    for(int string_position = sample_string_input.length() - 1; string_position >= 0; string_position--)
+    {
+    char current_character_position = sample_string_input.charAt(string_position) ;
+
+        if(current_character_position == ' ')
+        {
+        System.out.print(current_word_container + " ") ;
+        current_word_container = "" ; // Resetting the word container for next word
+        }
+
+        else
+        {
+        current_word_container = current_character_position + current_word_container ;
+        }
+    }
+    System.out.print(current_word_container) ; // Printing the last word, as it won't be followed by a space
+    }
+}
+
+
+// 7.
+import java.util.Scanner ;
+
+public class task_7
+{
+public static void main (String [] args)
+    {
+    Scanner ade = new Scanner(System.in) ;
+    System.out.print(" Please enter sample string no.1 = ") ;
+    String sample_string_input_1 = ade.nextLine() ;
+    System.out.print(" Please enter sample string no.2 = ") ;
+    String sample_string_input_2 = ade.nextLine() ;
+    String concatenated_string = "" ;
+    boolean flag_1 = false ;
+    boolean flag_2 = false ;
+
+    for(int string_position_1 = 0; string_position_1 <= sample_string_input_1.length() - 1; string_position_1 ++)
+    {
+    char current_character_position_1 = sample_string_input_1.charAt(string_position_1) ;
+
+        for(int string_position_2 = 0; string_position_2 <= sample_string_input_2.length() - 1; string_position_2 ++)
+        {
+        char current_character_position_2 = sample_string_input_2.charAt(string_position_2) ;
+
+            if(current_character_position_1 == current_character_position_2)
+            {
+            flag_1 = true ;
+            break ;
+            }
+        }
+
+    if (flag_1 == false)
+    {
+    concatenated_string = concatenated_string + current_character_position_1 ;
+    }
+    flag_1 = false ; // resetting for next character
+    }
+
+
+    for(int string_position_2 = 0; string_position_2 <= sample_string_input_2.length() - 1; string_position_2 ++)
+    {
+    char current_character_position_2 = sample_string_input_2.charAt(string_position_2) ;
+
+        for(int string_position_1 = 0; string_position_1 <= sample_string_input_1.length() - 1; string_position_1 ++)
+        {
+        char current_character_position_1 = sample_string_input_1.charAt(string_position_1) ;
+
+            if(current_character_position_2 == current_character_position_1)
+            {
+            flag_2 = true ;
+            break ;
+            }
+        }
+
+    if (flag_2 == false)
+    {
+    concatenated_string = concatenated_string + current_character_position_2 ;
+    }
+    flag_2 = false ; // resetting for next character
+    }
+    System.out.println(concatenated_string.toUpperCase()) ;
+    }
+}
+
+
+// 8.
+import java.util.Scanner ;
+
+public class task_8
+{
+public static void main (String [] args)
+    {
+    Scanner ade = new Scanner(System.in) ;
+    System.out.print(" Please enter a sample string = ") ;
+    String sample_string= ade.nextLine() ;
+    String full_string = "" ;
+    boolean flag = false ;
+
+    for(int string_position = 0; string_position <= sample_string.length() - 1; string_position++)
+    {
+    char current_character_position = sample_string.charAt(string_position) ;
+
+        if(('a' <= current_character_position && current_character_position <= 'z') || ('A' <= current_character_position && current_character_position <= 'Z'))
+        {
+
+            if(flag == false) // If flag is false, making the letter lowercase, otherwise making it uppercase
+            {
+            full_string += Character.toLowerCase(current_character_position) ;
+            flag = true ; // for next character
+            }
+
+            else
+            {
+            full_string += Character.toUpperCase(current_character_position) ;
+            flag = false ; // for next character
+            }
+        }
+
+        else
+        {
+        full_string += current_character_position ;
+        }
+    }
+    System.out.print(full_string) ;
+    }
+}
+
+
+// 9.
+import java.util.Scanner ;
+
+public class task_9
+{
+public static void main (String [] args)
+    {
+    Scanner ade = new Scanner(System.in) ;
+    System.out.print(" Please enter a password = ") ;
+    String password= ade.nextLine() ;
+    int counter_1 = 0 ;
+    int counter_2 = 0 ;
+    int counter_3 = 0 ;
+    int counter_4 = 0 ;
+    boolean flag = false ;
+
+    for(int string_position = 0; string_position <= password.length() - 1; string_position++)
+    {
+    char current_character_position = password.charAt(string_position) ;
+
+        if(password.length() >= 8)
+        {
+
+            if(current_character_position >= 65 && current_character_position <= 90) // Uppercase letters
+            {
+            counter_1 ++ ;
+            }
+
+            if(current_character_position >= 97 && current_character_position <= 122) // Lowercase letters
+            {
+            counter_2 ++ ;
+            }
+
+            if(current_character_position >= 48 && current_character_position <= 57) // AlL Digits
+            {
+            counter_3 ++ ;
+            }
+
+            if(current_character_position >= 33 && current_character_position <= 47) // AlL Special characters
+            {
+            counter_4 ++ ;
+            }
+        }
+
+        else
+        {
+        flag = false ;
+        }
+    }
+
+    if (counter_1 >= 1 && counter_2 >= 1 && counter_3 >= 1 && counter_4 >= 1)
+    {
+    flag = true ;
+    }
+    System.out.print(flag) ;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
