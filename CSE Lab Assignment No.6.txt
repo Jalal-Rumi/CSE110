@@ -1,0 +1,598 @@
+// 1.
+import java.util.Scanner;
+public class task_1
+{
+    public static void main(String [] args)
+    {
+        Scanner ade = new Scanner(System.in) ;
+        
+        System.out.print(" N = ") ; // Array Length
+        int array_length = ade.nextInt() ;
+        int [] array = new int [array_length] ; // Creating array of given length
+
+        for(int array_element_counter = 0; array_element_counter <= array.length - 1; array_element_counter++)
+        {
+        System.out.print(" Enter a number: ") ;
+        array [array_element_counter] = ade.nextInt() ;
+        }
+
+        System.out.println(" The elements of the array are: ") ;
+        for(int array_element_counter  = 0; array_element_counter  <= array.length - 1; array_element_counter++)
+        {
+        System.out.println(array_element_counter + ": " + array [array_element_counter]) ;
+        }
+
+        System.out.print(" Enter another number: ") ;
+        int another_number = ade.nextInt() ;
+
+        int [] resized_array = new int [array.length + 1] ; // Updating array length and creating a new array
+        for(int array_element_counter = 0; array_element_counter <= array.length - 1; array_element_counter++)
+        {
+        resized_array [array_element_counter] = array [array_element_counter] ;
+        }
+        resized_array[resized_array.length - 1] = another_number ;
+
+        System.out.println(" After resizing the array: ") ;
+        for(int array_element_counter = 0; array_element_counter <= resized_array.length - 1; array_element_counter++)
+        {
+        System.out.print(resized_array [array_element_counter] + " ") ;
+    }
+    }
+}
+
+
+// 2.
+import java.util.Scanner;
+public class task_2
+{
+    public static void main(String [] args)
+    {
+        Scanner ade = new Scanner(System.in) ;
+        
+        System.out.print(" N = ") ; // Array Length
+        int array_length = ade.nextInt() ;
+        int [] array = new int [array_length] ; // Creating array of given length
+
+        for(int array_element_counter = 0; array_element_counter <= array.length - 1; array_element_counter++)
+        {
+        System.out.print(" Enter a number: ") ;
+        array [array_element_counter] = ade.nextInt() ;
+        }
+
+        System.out.println(" Before removing duplicates: ") ;
+        for(int array_element_counter  = 0; array_element_counter  <= array.length - 1; array_element_counter++)
+        {
+        System.out.print(array [array_element_counter] + " ") ;
+        }
+        System.out.println() ;
+
+        for(int array_element_counter = 0; array_element_counter <= array.length - 1; array_element_counter++)
+        {
+
+            for(int array_element_double_checker = array_element_counter + 1; array_element_double_checker <= array.length - 1; array_element_double_checker++)
+            {
+                if(array [array_element_counter] == array [array_element_double_checker])
+                {
+                array [array_element_double_checker] = 0 ;
+                }
+            }
+        }
+
+        System.out.println(" After replacing duplicates with 0: ") ;
+        for(int array_element_counter = 0; array_element_counter <= array.length - 1; array_element_counter++)
+        {
+        System.out.print(array [array_element_counter] + " ") ;
+        }
+    }
+}
+
+
+// 3.
+import java.util.Scanner;
+
+public class task_3_A_B
+{
+    public static void main(String [] args)
+    {
+        Scanner ade = new Scanner(System.in) ;
+        
+        System.out.print(" N = ") ; // Array Length
+        int array_length = ade.nextInt() ;
+        int [] array = new int [array_length] ; // Creating array of given length
+
+        for(int array_element_counter = 0; array_element_counter <= array.length - 1; array_element_counter++)
+        {
+        System.out.print(" Enter a number: ") ;
+        array [array_element_counter] = ade.nextInt() ;
+        }
+
+        // a) Out of place (Creating a new array)
+        int [] new_array_a = new int [array_length] ;
+        for(int array_element_counter = 0; array_element_counter <= array.length - 1; array_element_counter++)
+        {
+        new_array_a [array_element_counter] = array [array_length - 1 - array_element_counter] ;
+        }
+
+        System.out.println(" Reversed using a new array: ") ;
+        for(int array_element_counter = 0; array_element_counter <= array.length - 1; array_element_counter++)
+        {
+        System.out.print(new_array_a [array_element_counter] + " ") ;
+        }
+        System.out.println() ; // Next line
+
+        // b) In place (Within same array)
+        for(int array_element_counter = 0; array_element_counter <= array.length / 2; array_element_counter++)
+        {
+        int temp = array [array_element_counter] ;
+        array [array_element_counter] = array [array_length - 1 - array_element_counter] ;
+        array [array_length - 1 - array_element_counter] = temp ;
+        }
+
+        System.out.println(" Reversed the original array: ") ;
+        for(int array_element_counter = 0; array_element_counter <= array.length - 1; array_element_counter++)
+        {
+        System.out.print(array [array_element_counter] + " ") ;
+        }
+    }
+}
+
+
+// 4.
+import java.util.Scanner;
+public class task_4
+{
+    public static void main(String [] args)
+    {
+        Scanner ade = new Scanner(System.in) ;
+        
+        System.out.print(" N = ") ; // Array Length
+        int array_length = ade.nextInt() ;
+        int [] array = new int [array_length] ; // Creating array of given length
+
+        for(int array_element_counter = 0; array_element_counter <= array.length - 1; array_element_counter++)
+        {
+        System.out.print(" Enter a number: ") ;
+        array [array_element_counter] = ade.nextInt() ;
+        }
+
+        System.out.println(" Original array: ") ;
+        for(int array_element_counter  = 0; array_element_counter  <= array.length - 1; array_element_counter++)
+        {
+        System.out.print(array [array_element_counter] + " ") ;
+        }
+        System.out.println() ;
+
+        for(int array_element_counter = 0; array_element_counter <= array.length - 1; array_element_counter++)
+        {
+
+                if(array [array_element_counter] > 0)
+                {
+                array [array_element_counter] = 1 ;
+                }
+
+                else if(array [array_element_counter] < 0)
+                {
+                array [array_element_counter] = 0 ;
+                }
+        }
+
+        System.out.println(" After modifying: ") ;
+        for(int array_element_counter = 0; array_element_counter <= array.length - 1; array_element_counter++)
+        {
+        System.out.print(array [array_element_counter] + " ") ;
+        }
+    }
+}
+
+
+// 5.
+import java.util.Scanner;
+public class task_5
+{
+    public static void main(String [] args)
+    {
+        Scanner ade = new Scanner(System.in) ;
+        
+        System.out.print(" N = ") ; // Array Length
+        int array_length = ade.nextInt() ;
+        int [] array = new int [array_length] ; // Creating array of given length
+
+        for(int array_element_counter = 0; array_element_counter <= array.length - 1; array_element_counter++)
+        {
+        System.out.print(" Enter a number: ") ;
+        array [array_element_counter] = ade.nextInt() ;
+        }
+
+        System.out.print(" Enter a number to search: ") ;
+        int search_number = ade.nextInt() ;
+
+        boolean flag = false ;
+        int index_checker = 0 ;
+        for(int array_element_counter = 0; array_element_counter <= array.length - 1; array_element_counter++)
+        {
+
+                if(array[array_element_counter] == search_number)
+                {
+                flag = true ;
+                index_checker = array_element_counter ;
+                }
+        }
+
+        if(flag == true)
+        {
+        System.out.print(search_number + " is at index " + index_checker) ;
+        }
+
+        else
+        {
+        System.out.print(" Element not found ") ;
+        }
+    }
+}
+
+
+// 6.
+import java.util.Scanner;
+public class task_6
+{
+    public static void main(String [] args)
+    {
+        Scanner ade = new Scanner(System.in) ;
+        
+        System.out.print(" Enter the length of the array: ") ; // Array Length
+        int array_length = ade.nextInt() ;
+        double [] array = new double [array_length] ; // Creating array of given length
+
+        for(int array_element_counter = 0; array_element_counter <= array.length - 1; array_element_counter++)
+        {
+        System.out.print(" Enter a number: ") ;
+        array [array_element_counter] = ade.nextDouble() ;
+        }
+
+        double max_element = array [0] ;
+        int max_index = 0 ;
+        double min_element = array [0] ;
+        int min_index = 0 ;
+        double sum = 0 ;
+
+        for(int array_element_counter = 0; array_element_counter <= array.length - 1; array_element_counter++)
+        {
+        sum += array [array_element_counter] ;
+
+                if(array [array_element_counter] > max_element)
+                {
+                max_element = array [array_element_counter] ;
+                max_index = array_element_counter ;
+                }
+
+                if(array [array_element_counter] < min_element)
+                {
+                min_element = array [array_element_counter] ;
+                min_index = array_element_counter ;
+                }
+        }
+        double average = sum / array.length ;
+
+        System.out.println(" Maximum element " + max_element + " found at index " + max_index) ;
+        System.out.println(" Minimum element " + min_element + " found at index " + min_index) ;
+        System.out.printf(" Summation: %.1f " , sum) ;
+        System.out.println() ; // Next line
+        System.out.printf(" Average: %.2f " , average) ;
+    }
+}
+
+
+// 7.
+import java.util.Scanner;
+public class task_7
+{
+    public static void main(String [] args)
+    {
+        Scanner ade = new Scanner(System.in) ;
+        
+        System.out.print(" N = ") ; // Array Length
+        int array_length = ade.nextInt() ;
+        int [] array = new int [array_length] ; // Creating array of given length
+
+        for(int array_element_counter = 0; array_element_counter <= array.length - 1; array_element_counter++)
+        {
+        System.out.print(" Enter a number: ") ;
+        array [array_element_counter] = ade.nextInt() ;
+        }
+
+        System.out.println(" Input array: ") ;
+        for(int array_element_counter = 0; array_element_counter <= array.length - 1; array_element_counter++)
+        {
+        System.out.print(array [array_element_counter] + " ") ;
+        }
+        System.out.println() ; // Next line
+
+        int [] new_array_with_unique_elements = new int [array.length] ;
+        int unique_element_counter = 0 ;
+
+        boolean flag = false ;
+        for(int array_element_counter = 0; array_element_counter <= array.length - 1; array_element_counter++)
+        {
+          for(int unique_element_checker = 0; unique_element_checker <= unique_element_counter - 1; unique_element_checker++)
+            {
+                if(array [array_element_counter] == new_array_with_unique_elements [unique_element_checker])
+                {
+                flag = true;
+                break ;
+                }
+            }
+
+            if(flag == false)
+            {
+            new_array_with_unique_elements [unique_element_counter] = array [array_element_counter] ;
+            unique_element_counter ++ ; // Next index or position
+            }
+            flag = false ; // Resetting for next element
+        }
+
+        System.out.println(" New array: ") ;
+     for(int array_element_counter = 0; array_element_counter <= unique_element_counter - 1; array_element_counter++)
+        {
+        System.out.print(new_array_with_unique_elements [array_element_counter] + " ") ;
+        }
+    }
+}
+
+
+// 8.
+import java.util.Scanner;
+public class task_8
+{
+    public static void main(String [] args)
+    {
+        Scanner ade = new Scanner(System.in) ;
+
+        System.out.print(" Please enter the length of array 1: ") ; // Array Length
+        int array_length_1 = ade.nextInt() ;
+        int [] array_1 = new int [array_length_1] ; // Creating array of given length
+
+        System.out.println(" Please enter the elements of the arr1: ") ;
+        for(int array_element_counter = 0; array_element_counter <= array_1.length - 1; array_element_counter++)
+        {
+        array_1 [array_element_counter] = ade.nextInt() ;
+        }
+
+        System.out.print(" Please enter the length of array 2: ") ; // Array Length
+        int array_length_2 = ade.nextInt() ;
+        int [] array_2 = new int [array_length_2] ; // Creating array of given length
+
+        System.out.println(" Please enter the elements of the arr2: ") ;
+        for(int array_element_counter = 0; array_element_counter <= array_2.length - 1; array_element_counter++)
+        {
+        array_2 [array_element_counter] = ade.nextInt() ;
+        }
+
+        boolean flag_1 = false ; // Subset checker
+        boolean flag_2 = false ; // Subset confirmation and then printing it
+        for(int array_element_counter = 0; array_element_counter <= array_2.length - 1; array_element_counter++)
+        {
+            for(int array_1_element_counter = 0; array_1_element_counter <= array_1.length - 1; array_1_element_counter++)
+            {
+                if(array_2 [array_element_counter] == array_1 [array_1_element_counter]) // Exiting the inner loop if the element is found
+                {
+                flag_1 = true;
+                break;
+                }
+            }
+            if(flag_1 == false)
+            {
+            flag_2 = true ;
+            break ;
+            }
+        flag_1 = false ; // Resetting it for next element in array 2
+        }
+
+        if(flag_2 == false)
+        {
+        System.out.println(" Array 2 is a subset of Array 1.") ;
+        }
+
+        else
+        {
+        System.out.println(" Array 2 is not a subset of Array 1.") ;
+        }
+    }
+}
+
+
+// 9.
+import java.util.Scanner;
+public class task_9
+{
+    public static void main(String [] args)
+    {
+        Scanner ade = new Scanner(System.in) ;
+
+        System.out.print(" N = ") ; // Array Length
+        int array_length = ade.nextInt() ;
+        int [] array = new int [array_length] ; // Creating array of given length
+
+        for(int array_element_counter = 0; array_element_counter <= array.length - 1; array_element_counter++)
+        {
+        System.out.print(" Enter a number: ") ;
+        array [array_element_counter] = ade.nextInt() ;
+        }
+
+        System.out.println(" Original Array: ") ;
+        for(int array_element_counter = 0; array_element_counter <= array.length - 1; array_element_counter++)
+        {
+        System.out.print(array [array_element_counter] + " ") ;
+        }
+        System.out.println() ; // Next line
+
+        for(int array_element_counter = 0; array_element_counter <= array.length - 1; array_element_counter++)
+        {
+        int max_element_checker = array_element_counter ; // Assuming the current position has the largest element
+
+            for(int current_array_element_counter = array_element_counter + 1; current_array_element_counter <= array.length - 1; current_array_element_counter++)
+            {
+                if(array [current_array_element_counter] > array [max_element_checker])
+                {
+                max_element_checker = current_array_element_counter ;
+                }
+            }
+        int temp = array [array_element_counter] ;
+        array [array_element_counter] = array [max_element_checker] ;
+        array [max_element_checker] = temp ;
+        }
+
+        System.out.println(" Sorted Array: ") ;
+        for(int array_element_counter = 0; array_element_counter <= array.length - 1; array_element_counter++)
+        {
+        System.out.print(array [array_element_counter] + " ") ;
+        }
+    }
+}
+
+
+// 10.
+import java.util.Scanner;
+public class task_10
+{
+    public static void main(String [] args)
+    {
+        Scanner ade = new Scanner(System.in) ;
+
+        System.out.print(" N = ") ; // Array Length
+        int array_length = ade.nextInt() ;
+        int [] marks = new int [array_length] ; // Creating array of given length for marks
+        String [] names = new String [array_length] ; // Creating array of given length for names
+
+        for(int array_element_counter = 0; array_element_counter <= array_length - 1; array_element_counter++)
+        {
+        System.out.print(" Enter marks: ") ;
+        marks [array_element_counter] = ade.nextInt() ;
+        ade.nextLine() ;
+        System.out.print(" Enter names: ") ;
+        names [array_element_counter] = ade.nextLine() ;
+        }
+
+        for(int array_element_counter = 0; array_element_counter <= (marks.length - 1) - 1; array_element_counter++)
+        {
+            for(int current_array_element_counter = 0; current_array_element_counter <= (marks.length - 1) - array_element_counter - 1; current_array_element_counter++)
+            {
+                if(marks [current_array_element_counter] > marks [current_array_element_counter + 1])
+                {
+                // Swapping marks
+                int temp_marks = marks [current_array_element_counter] ;
+                marks [current_array_element_counter] = marks [current_array_element_counter + 1] ;
+                marks [current_array_element_counter + 1] = temp_marks ;
+
+                // Swapping corresponding names
+                String temp_names = names [current_array_element_counter] ;
+                names [current_array_element_counter] = names [current_array_element_counter + 1] ;
+                names [current_array_element_counter + 1] = temp_names ;
+                }
+            }
+        }
+
+        System.out.println(" Sorted Array: ") ;
+        for(int array_element_counter = 0; array_element_counter <= array_length - 1; array_element_counter++)
+        {
+        System.out.print(marks [array_element_counter] + " ");
+        }
+        System.out.println() ; // Next line
+
+        for(int array_element_counter = 0; array_element_counter <= array_length - 1; array_element_counter++)
+        {
+        System.out.print(names [array_element_counter] + " ") ;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
